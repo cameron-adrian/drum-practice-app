@@ -107,13 +107,15 @@ button:focus-visible {
 }
 
 .pattern {
+  display: flex;
   font-size: 24px;
   letter-spacing: 5px;
   background-color: var(--dark-color);
-  padding: 8px;
+  padding: 16px;
   border: solid 2px var(--accent-color);
   border-radius: 8px;
   justify-content: center;
+  align-items: center;
   color: #f3bc77;
   width: 50%;
 }
