@@ -7,7 +7,9 @@ function SignUpForm() {
     e.preventDefault();
     // Here you would typically send the contact information to your backend
     console.log("Submitted:", contact);
-    alert("Thanks for signing up!");
+    alert(
+      "This is where I will eventually put an email/phonenumber/just log-into-Twitter-and-get-a-dm backend to send you weekly patterns!"
+    );
     setContact("");
   };
 
