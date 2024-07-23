@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DrumPattern from "./components/DrumPattern";
 import SignUpForm from "./components/SignUpForm";
 import SymbolKey from "./components/SymbolKey";
+import ParameterControl from "./components/ParameterControl";
 
 function App() {
   const [pattern, setPattern] = useState([]);
@@ -42,22 +43,12 @@ function App() {
   return (
     <div className="container">
       <h1>Drum Pattern Randomizer</h1>
-      <div className="input-group">
-        <label htmlFor="patternLength">Pattern Length:</label>
-        <input
-          type="range"
-          id="patternLength"
-          value={patternLength}
-          onChange={(e) =>
-            setPatternLength(
-              Math.min(16, Math.max(1, parseInt(e.target.value) || 1))
-            )
-          }
-          min="1"
-          max="16"
-        />
-        <button onClick={generatePattern}>Generate Pattern</button>
-      </div>
+
+      <ParameterControl
+        patternLength={patternLength}
+        setPatternLength={setPatternLength}
+      />
+      <button onClick={generatePattern}>Generate Pattern</button>
       <DrumPattern pattern={pattern} />
       <SymbolKey />
       <SignUpForm />
