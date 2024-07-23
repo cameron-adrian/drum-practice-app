@@ -41,17 +41,23 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1>Drum Pattern Randomizer</h1>
-
-      <ParameterControl
-        patternLength={patternLength}
-        setPatternLength={setPatternLength}
-      />
-      <button onClick={generatePattern}>Generate Pattern</button>
-      <DrumPattern pattern={pattern} />
-      <SymbolKey />
-      <SignUpForm />
+    <div>
+      <div className="container">
+        <h1>Drum Pattern Randomizer</h1>
+        <ParameterControl
+          className="left-sidebar"
+          patternLength={patternLength}
+          setPatternLength={setPatternLength}
+        />
+        <div className="generate-pattern-button">
+          <button onClick={generatePattern}>Generate New Pattern</button>
+        </div>
+        <div className="pattern-group">
+          <DrumPattern pattern={pattern} />
+          <SymbolKey />
+        </div>
+        <SignUpForm />
+      </div>
     </div>
   );
 }
