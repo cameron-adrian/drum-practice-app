@@ -144,6 +144,10 @@ button:focus-visible {
   width: 45%;
 }
 
+.highlight {
+  font-weight: bolder;
+}
+
 .symbol-key {
   display: flex;
   justify-content: space-around;
