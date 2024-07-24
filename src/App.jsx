@@ -56,11 +56,7 @@ function App() {
           <button onClick={generatePattern}>Generate New Pattern</button>
         </div>
         <div className="pattern-group">
-          <DrumPattern
-            pattern={pattern}
-            tempo={tempo}
-            setPattern={setPattern}
-          />
+          <DrumPattern pattern={pattern} tempo={tempo} />
           <SymbolKey />
         </div>
         <SignUpForm />
