@@ -31,10 +31,10 @@ function ParameterControl(props) {
           value={tempo}
           onChange={(e) =>
             setTempo(
-              Math.min(240, Math.max(12, parseInt(e.target.value) || 120))
+              Math.min(240, Math.max(36, parseInt(e.target.value) || 120))
             )
           }
-          min="12"
+          min="36"
           max="240"
           step="1"
         />
