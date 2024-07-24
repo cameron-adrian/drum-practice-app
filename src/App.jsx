@@ -8,6 +8,7 @@ import ParameterControl from "./components/ParameterControl";
 function App() {
   const [pattern, setPattern] = useState([]);
   const [patternLength, setPatternLength] = useState(8);
+  const [tempo, setTempo] = useState(120);
 
   const generatePattern = () => {
     const newPattern = [];
@@ -16,18 +17,18 @@ function App() {
     let lCount = 0;
 
     for (let i = 0; i < patternLength; i++) {
-      let strike;
+      let hit;
       do {
-        strike = options[Math.floor(Math.random() * options.length)];
+        hit = options[Math.floor(Math.random() * options.length)];
       } while (
-        ((strike === "R" || strike === "Ř" || strike === "ŗ") && rCount >= 4) ||
-        ((strike === "L" || strike === "Ĺ" || strike === "ļ") && lCount >= 4)
+        ((hit === "R" || hit === "Ř" || hit === "ŗ") && rCount >= 4) ||
+        ((hit === "L" || hit === "Ĺ" || hit === "ļ") && lCount >= 4)
       );
 
-      if (strike === "R" || strike === "Ř" || strike === "ŗ") {
+      if (hit === "R" || hit === "Ř" || hit === "ŗ") {
         rCount++;
         lCount = 0;
-      } else if (strike === "L" || strike === "Ĺ" || strike === "ļ") {
+      } else if (hit === "L" || hit === "Ĺ" || hit === "ļ") {
         lCount++;
         rCount = 0;
       } else {
@@ -35,7 +36,7 @@ function App() {
         lCount = 0;
       }
 
-      newPattern.push(strike);
+      newPattern.push(hit);
     }
     setPattern(newPattern);
   };
@@ -48,12 +49,14 @@ function App() {
           className="left-sidebar"
           patternLength={patternLength}
           setPatternLength={setPatternLength}
+          tempo={tempo}
+          setTempo={setTempo}
         />
         <div className="generate-pattern-button">
           <button onClick={generatePattern}>Generate New Pattern</button>
         </div>
         <div className="pattern-group">
-          <DrumPattern pattern={pattern} />
+          <DrumPattern pattern={pattern} tempo={tempo} />
           <SymbolKey />
         </div>
         <SignUpForm />

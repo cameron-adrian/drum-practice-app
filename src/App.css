@@ -4,10 +4,10 @@
   --accent-color: #a55233;
   --light-color: #f3bc77;
 
-  /* --dark-color: #1d1716;
-  --medium-color: #402a23;
-  --accent-color: #a55233;
-  --light-color: #f3bc77; */
+  /* --dark-color: #734444;
+  --medium-color: #c37857;
+  --accent-color: #99b27f;
+  --light-color: #eeedbe; */
 
   font-family: "Source Code Pro", monospace, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
@@ -103,8 +103,21 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 1rem auto -webkit-focus-ring-color;
 }
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1rem;
+  border-radius: 5px;
+  background: var(--dark-color);
+  outline: solid 2px var(--accent-color);
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
 .drum-pattern {
   display: flex;
   margin-top: 20px;
@@ -123,7 +136,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   color: #f3bc77;
-  width: 50%;
+  width: 45%;
 }
 
 .symbol-key {

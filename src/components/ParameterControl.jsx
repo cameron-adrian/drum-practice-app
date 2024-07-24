@@ -2,10 +2,13 @@ import React, { useState } from "react";
 
 function ParameterControl(props) {
   const { patternLength, setPatternLength } = props;
+  const { tempo, setTempo } = props;
+
   return (
     <div className="input-group">
-      <label htmlFor="patternLength">Pattern Length:</label>
+      <label htmlFor="patternLength">Pattern Length: {patternLength}</label>
       <input
+        className="slider"
         type="range"
         id="patternLength"
         value={patternLength}
@@ -16,6 +19,19 @@ function ParameterControl(props) {
         }
         min="1"
         max="16"
+      />
+      <label htmlFor="tempo">Tempo (BPM): {tempo}</label>
+      <input
+        className="slider"
+        type="range"
+        id="tempo"
+        value={tempo}
+        onChange={(e) =>
+          setTempo(Math.min(240, Math.max(12, parseInt(e.target.value) || 120)))
+        }
+        min="12"
+        max="240"
+        step="1"
       />
     </div>
   );
