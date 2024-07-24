@@ -5,7 +5,6 @@ function SignUpForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the contact information to your backend
     console.log("Submitted:", contact);
     alert(
       "This is where I will eventually put an email/phonenumber/just log-into-Twitter-and-get-a-dm backend to send you weekly patterns!"
