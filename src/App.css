@@ -147,8 +147,10 @@ button:focus-visible {
   border-radius: 8px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #f3bc77;
-  min-width: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 .highlight {
