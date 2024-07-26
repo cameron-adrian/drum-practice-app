@@ -38,7 +38,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: var (--dark-color);
-  background-image: "/assets/bedge-grunge.png";
   background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   min-width: 320px;
   justify-content: center;

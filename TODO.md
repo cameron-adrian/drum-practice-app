@@ -3,7 +3,7 @@
 ## High Priority
 
 - [ ] Better tooltips
-- [ ] Add sidebar thing
+- [ ]
 - [ ]
 
 ## Medium Priority
@@ -20,7 +20,7 @@ I'd could maybe use a useEffect to update the pattern array each time a sound is
 - [ ] Optimize playback in browser so it's even and doesn't speed up or slow down
 - [ ] Pattern character improvements: add bold, colors, etc to help differentiate them visually. Each one needs a CSS class
 
-      Checkboxes
+### Checkboxes
 
 - [ ] checkbox to toggle accents
 - [ ] checkbox to toggle ghost notes
