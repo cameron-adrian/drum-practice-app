@@ -177,7 +177,13 @@ button:focus-visible {
   justify-content: center;
 }
 
-.change-theme-button {
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.randomize-theme-button {
   display: flex;
   justify-content: center;
   margin-top: 10px;

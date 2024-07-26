@@ -23,13 +23,24 @@ function DrumPattern({ pattern, tempo }) {
     });
   };
 
+  const copyPatternToClipboard = () => {
+    navigator.clipboard.writeText(pattern.join(" ")).then(() => {
+      alert("Pattern copied to clipboard!");
+    });
+  };
+
   return (
     <div className="drum-pattern">
       <h2>Your Pattern:</h2>
       <p className="pattern">
         {pattern != 0 ? pattern.join(" ") : "\u00A0\u00A0\n\u00A0\u00A0"}
       </p>
-      <button onClick={playPattern}>Play Pattern</button>
+      <div className="button-group">
+        <button onClick={playPattern}>Play Pattern</button>
+        <div className="copy-pattern-button">
+          <button onClick={copyPatternToClipboard}>Copy Pattern</button>
+        </div>
+      </div>
     </div>
   );
 }

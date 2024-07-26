@@ -42,7 +42,9 @@ function App() {
   };
 
   function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    return `#${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0")}`;
   }
 
   function updateThemeColors() {
@@ -57,8 +59,8 @@ function App() {
     <div>
       <div className="container">
         <h1>Drum Pattern Randomizer</h1>
-        <div className="change-theme-button">
-          <button onClick={updateThemeColors}>Change Theme</button>
+        <div className="randomize-theme-button">
+          <button onClick={updateThemeColors}>Randomize Theme</button>
         </div>
         <ParameterControl
           className="left-sidebar"
