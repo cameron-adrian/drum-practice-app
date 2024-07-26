@@ -176,6 +176,14 @@ button:focus-visible {
   display: flex;
   justify-content: center;
 }
+
+.change-theme-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .sign-up-form {
   margin-top: 40px;
 }

@@ -41,10 +41,25 @@ function App() {
     setPattern(newPattern);
   };
 
+  function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
+
+  function updateThemeColors() {
+    const root = document.documentElement;
+    root.style.setProperty("--dark-color", getRandomHexColor());
+    root.style.setProperty("--medium-color", getRandomHexColor());
+    root.style.setProperty("--accent-color", getRandomHexColor());
+    root.style.setProperty("--light-color", getRandomHexColor());
+  }
+
   return (
     <div>
       <div className="container">
         <h1>Drum Pattern Randomizer</h1>
+        <div className="change-theme-button">
+          <button onClick={updateThemeColors}>Change Theme</button>
+        </div>
         <ParameterControl
           className="left-sidebar"
           patternLength={patternLength}
