@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 function SignUpForm() {
   const [contact, setContact] = useState("");
+  const alertMessage =
+    "This is where I will eventually put an email/phonenumber/backend to send you a new pattern every week!";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submitted:", contact);
-    alert(
-      "This is where I will eventually put an email/phonenumber/just log-into-Twitter-and-get-a-dm backend to send you weekly patterns!"
-    );
+    alert(alertMessage);
     setContact("");
   };
 

@@ -70,7 +70,15 @@ function App() {
           setTempo={setTempo}
         />
         <div className="generate-pattern-button">
-          <button onClick={generatePattern}>Generate New Pattern</button>
+          <button
+            onClick={
+              36 < tempo < 240
+                ? generatePattern
+                : alert("Please choose a tempo between 36 and 240")
+            }
+          >
+            Generate New Pattern
+          </button>
         </div>
         <div className="pattern-group">
           <DrumPattern pattern={pattern} tempo={tempo} />

@@ -4,12 +4,14 @@ function ParameterControl(props) {
   const { patternLength, setPatternLength } = props;
   const { tempo, setTempo } = props;
 
-  // function validateTempoValue(value) {
-  //   if (value) {
-  // TODO: fix input so that you can only input numbers in the acceptable range
-  //   }
-  //   return;
-  // }
+  const handleTempoChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    if (!isNaN(value) && value >= 36 && value <= 240) {
+      setTempo(value);
+    } else {
+      e.target.value = tempo;
+    }
+  };
 
   return (
     <div className="input-group">
@@ -30,16 +32,14 @@ function ParameterControl(props) {
         />
       </div>
       <div>
-        <label htmlFor="tempo">Tempo (BPM):</label>
+        <label htmlFor="tempo">Tempo: {tempo} BPM </label>
         <input
           className="slider"
           pattern="[0-9]*"
-          type="number"
+          type="range"
           id="tempo"
           value={tempo}
-          onChange={(e) => {
-            setTempo(e.target.value);
-          }}
+          onChange={handleTempoChange}
           min="36"
           max="240"
           step="1"
