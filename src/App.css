@@ -148,7 +148,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   color: #f3bc77;
-  width: 45%;
+  min-width: 100%;
 }
 
 .highlight {
